@@ -45,44 +45,45 @@
 ## **Demo**
 ### Phân hệ người dùng
 - **Giao diện trang chủ**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ETbH65p4pHFMnER2KckjJgkBwKPKM-LIhIf2trolRk4sUg?e=zoxgb1)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ETbH65p4pHFMnER2KckjJgkBwKPKM-LIhIf2trolRk4sUg?e=zoxgb1]
+
 
 - **Giao diện danh sách khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EYmFS14h3bJJrWwDAMOjoj0BRplZxYYTtUak1myBu2M7jg?e=XXKez0)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EYmFS14h3bJJrWwDAMOjoj0BRplZxYYTtUak1myBu2M7jg?e=XXKez0]
 
 - **Giao diện chi tiết khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EdNoRrgqKIJGsjhyeH_ka-kBldYoDHbrSFVudX7FYqU2hQ?e=SJ2Pnp)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EdNoRrgqKIJGsjhyeH_ka-kBldYoDHbrSFVudX7FYqU2hQ?e=SJ2Pnp]
 
 - **Giao diện thanh toán khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EcpNNKDdpORHv6o3AEuMT-EBkAevhaNlw5kASrdXgGhIlw?e=t5tytV)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EcpNNKDdpORHv6o3AEuMT-EBkAevhaNlw5kASrdXgGhIlw?e=t5tytV]
 
 - **Giao diện đăng nhập**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EUE-j9GRuOJHhIpFSwTo8sIBoSfRy8B4dum_0i1Mt1ADTA?e=oHckEp)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EUE-j9GRuOJHhIpFSwTo8sIBoSfRy8B4dum_0i1Mt1ADTA?e=oHckEp]
 
 - **Giao diện đăng ki**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EfO-deTESL9Io8CTkm4nzwABCr-LMEwKptiih-a5HBeiww?e=TF4Ptu)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EfO-deTESL9Io8CTkm4nzwABCr-LMEwKptiih-a5HBeiww?e=TF4Ptu]
 
 - **Giao diện hồ sơ cá nhân**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EQ8fQS6X_uZEtCY6yW7kk0EB8d7GTYDix59Pd6wBmPgKUQ?e=hY1VJX)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EQ8fQS6X_uZEtCY6yW7kk0EB8d7GTYDix59Pd6wBmPgKUQ?e=hY1VJX]
 
 ### Phân hệ admin, giảng viên
 - **Giao diện quản lý danh sách khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/Ee1O3Bakrf9JiJEo14soikIBFd1jEFiXUTgSFAs4T3AsYw?e=SyRJND)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/Ee1O3Bakrf9JiJEo14soikIBFd1jEFiXUTgSFAs4T3AsYw?e=SyRJND]
 
 - **Giao diện tạo khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EStmJXdseqdJvVX7JUWEtuMBqEfTlX8WAKBLHQyK2naXhg?e=l2wPca)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EStmJXdseqdJvVX7JUWEtuMBqEfTlX8WAKBLHQyK2naXhg?e=l2wPca]
 
 - **Giao diện chỉnh sửa khóa học**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ERFBEEf9BbpOpfr1KUbv0ngBy6nw1elr7XyE49AlyOS4oQ?e=GmJzOR)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ERFBEEf9BbpOpfr1KUbv0ngBy6nw1elr7XyE49AlyOS4oQ?e=GmJzOR]
 
 - **Giao diện quản lý danh sách học viên**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EcAylL2gcfhHlcRud4qlgZsBgCW5OzzY0EnvY-lhPioz5w?e=huVkyZ)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EcAylL2gcfhHlcRud4qlgZsBgCW5OzzY0EnvY-lhPioz5w?e=huVkyZ]
 
 - **Giao diện quản lý giao viên**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EfzIXqI6-KJKupZ0EwfWGeABTNWrMN4YwX4HwTbP-5i9Eg?e=8bif7d)
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/EfzIXqI6-KJKupZ0EwfWGeABTNWrMN4YwX4HwTbP-5i9Eg?e=8bif7d]
 
 - **Giao diện chỉnh sửa người dùng**
-    ![](https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ETwJ5ft8Y69Bnom2oXPKYWsBoCUY15sMmd98vohF2_dhMA?e=DA0cbu) 
+    [https://actvneduvn-my.sharepoint.com/:i:/g/personal/at180440_actvn_edu_vn/ETwJ5ft8Y69Bnom2oXPKYWsBoCUY15sMmd98vohF2_dhMA?e=DA0cbu]
 
 
 **END**
