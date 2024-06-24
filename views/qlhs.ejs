@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Hồ Sơ Cá Nhân</title>
+    <link rel="stylesheet" href="../css/QLHS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quản Lý Hồ Sơ Cá Nhân</h1>
+        </header>
+        <section class="profile">
+            <div class="profile-picture">
+                <img src="../images/clients/anonimos.png" alt="Ảnh đại diện">
+            </div>
+            <% if(locals.data){ %>
+            <div class="profile-details">
+                <p><strong>Name: </strong> <%= data.name %></p>
+                <p><strong>Email: </strong> <%= data.email %></p>
+                <p><strong>Phone: </strong> <%= data.phone %></p>
+                <p><strong>Address: </strong> <%= data.address %></p>
+                <p><strong>Gender: </strong> <%= data.gender %></p>
+                <p><strong>Role: </strong> <%= data.role %></p>
+                <% if(data.role ==='teacher'){ %>
+                <p><strong>Description: </strong> <%= data.description_teacher %></p>
+                <p><strong>Year of experience: </strong> <%= data.experience %></p>
+                <% } %>
+            </div>
+            <% } %>
+        </section>
+        <section class="profile-edit">
+            <h2>Chỉnh sửa thông tin cá nhân</h2>
+            <% if(locals.data){ %>
+            <form action="/editInformation" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value= "<%= data.name %>">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value= <%= data.email %>>
+                </div>
+                <% if(locals.err){ %>
+                <p style="color: red;">Email đã bị đăng kí</p>
+                <% } %>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" value= <%= data.phone%>>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" value= "<%= data.address%>">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" name="gender" value= <%= data.gender%>>
+                </div>
+                <% if(data.role === 'teacher'){ %>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" value= "<%= data.description_teacher%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Year of experience:</label>
+                        <input type="text" id="experience" name="experience" value=<%= data.experience%>>
+                    </div>
+                <% } %>
+                <button type="submit">Lưu thay đổi</button>
+            </form>
+            <button onclick="window.location.href='/changePass'" style="width: 100%;">Đổi mật khẩu</button>
+            <% } %>
+        </section>
+    </div>
+</body>
+</html>

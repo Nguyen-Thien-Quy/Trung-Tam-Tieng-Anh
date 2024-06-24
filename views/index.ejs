@@ -1,0 +1,656 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Directory Landing Page</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="../logo/favicon.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+        <!--linear icon css-->
+		<link rel="stylesheet" href="../css/linearicons.css">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="../css/animate.css">
+
+		<!--flaticon.css-->
+        <link rel="stylesheet" href="../css/flaticon.css">
+
+		<!--slick.css-->
+        <link rel="stylesheet" href="../css/slick.css">
+		<link rel="stylesheet" href="../css/slick-theme.css">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="../css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="../css/responsive.css">
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+	
+	<body>
+		
+		
+		<!--header-top start -->
+		<header id="header-top" class="header-top">
+			<ul>
+				<li>
+					<div class="header-top-left">
+						<ul>
+							<li class="select-opt">
+								<select name="language" id="language">
+									<option value="default">VN</option>
+									<option value="Bangla">EN</option>
+								</select>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<% if(locals.login === false){ %>
+				<li class="head-responsive-right pull-right">
+					<div class="header-top-right">
+						<ul>
+							<!-- <li class="header-top-contact">
+								<strong style="font-size: 15px;">+1234567890</strong>
+							</li> -->
+							<li class="header-top-contact">
+								<a href="/login"><strong style="font-size: 15px;">Đăng Nhập</strong></a>
+							</li>
+							<li class="header-top-contact">
+								<a href="/register"><strong style="font-size: 15px;">Đăng Ký</strong></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<% }else{ %>
+				<% if(role === 'student'){ %>
+				<li class="head-responsive-right pull-right" >
+					<div class="header-top-right">
+						<ul>
+							<li class="header-top-contact">
+								<a href="/qlhs"><strong style="font-size: 15px;">Hồ sơ cá nhân</strong></a>	
+							</li>
+							<li class="header-top-contact">
+								<a href="/myCourses"><strong style="font-size: 15px;">Các lớp học đã mua</strong></a>	
+							</li>
+							<li class="header-top-contact">
+								<a href="/logout"><strong style="font-size: 15px;">Đăng xuất</strong></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<% }else if(role === 'teacher'){ %>
+					<li class="head-responsive-right pull-right" >
+						<div class="header-top-right">
+							<ul>
+								<li class="header-top-contact">
+									<a href="/qlhs"><strong style="font-size: 15px;">Hồ sơ cá nhân</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/teacherCourse/<%= locals.currentUserId %>"><strong style="font-size: 15px;">Quản lý lớp học</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/logout"><strong style="font-size: 15px;">Đăng xuất</strong></a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				<% }else if(role === 'admin'){ %>
+					<li class="head-responsive-right pull-right" >
+						<div class="header-top-right">
+							<ul>
+								<!-- <li class="header-top-contact">
+									<a href="/qlhs"><strong style="font-size: 15px;">Hồ sơ cá nhân</strong></a>	
+								</li> -->
+								<li class="header-top-contact">
+									<a href="/allCourse"><strong style="font-size: 15px;">Quản lý lớp học</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/allStudent"><strong style="font-size: 15px;">Quản lý học viên</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/allTeacher"><strong style="font-size: 15px;">Quản lý giáo viên</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/allPayment"><strong style="font-size: 15px;">Quản lý học phí</strong></a>	
+								</li>
+								<li class="header-top-contact">
+									<a href="/logout"><strong style="font-size: 15px;">Đăng xuất</strong></a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				<% } %>
+				<% } %>
+			</ul>
+					
+		</header><!--/.header-top-->
+		<!--header-top end -->
+
+		<!-- top-area Start -->
+		<section class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="index.html">QUY<span>ANH</span></a>
+
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                    <li class=" scroll active"><a href="#home">Trang chủ</a></li>
+			                    <li class="scroll"><a href="#works">Các Nhiệm vụ</a></li>
+			                    <li class="scroll"><a href="#explore">Các Khoá Học Tiêu Biểu</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">Đội Ngũ Sáng Lập</a></li>
+			                    <li class="scroll"><a href="#contact">Liên Hệ</a></li>
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav-->
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+		    <div class="clearfix"></div>
+
+		</section><!-- /.top-area-->
+		<!-- top-area End -->
+
+		<!--welcome-hero start -->
+		<section id="home" class="welcome-hero">
+			<div class="container">
+				<div class="welcome-hero-txt">
+					<h2>Chào Mừng Bạn Đến Với Trung Tâm Ngoại Ngữ QuyAnh! </h2>
+					<!-- <p>
+						Find Best Place, Restaurant, Hotel, Real State and many more think in just One click 
+					</p> -->
+				</div>
+
+				<form action="/findCourse" method="post">
+				<div class="welcome-hero-serch-box">
+					<div class="welcome-hero-form">
+						<div class="single-welcome-hero-form">
+							<h3>what?</h3>
+								<input type="text" name="course" placeholder="Ex: TOEIC, TOEFL, IELTS " />
+							<div class="welcome-hero-form-icon">
+								<i class="flaticon-list-with-dots"></i>
+							</div>
+						</div>
+					</div>
+					<div class="welcome-hero-serch">
+						<!-- onclick="window.location.href='#' -->
+						<button type="submit" class="welcome-hero-btn">
+							tìm kiếm  <i data-feather="search"></i> 
+						</button>
+					</div>
+				</div>
+			</form>
+			</div>
+
+		</section><!--/.welcome-hero-->
+		<!--welcome-hero end -->
+
+		<!--list-topics start -->
+		<section id="list-topics" class="list-topics">
+			<div class="container">
+				<div class="list-topics-content">
+					<ul>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-restaurant"><a href="/login"></a></i>
+								</div>
+								<h2><a href="/login">Mục tiêu chính</a></h2>
+								<p>5+ listings</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-travel"></i>
+								</div>
+								<h2><a href="/allCourse">Tất cả khoá học</a></h2>
+								<p>40+ listings</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-building"></i>
+								</div>
+								<h2><a href="/allTeacher">Tất cả giảng viên</a></h2>
+								<p>30+ listings</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Học sinh xuất sắc</a></h2>
+								<p>20+ listings</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.list-topics-->
+		<!--list-topics end-->
+
+		<!--works start -->
+		<section id="works" class="works">
+			<div class="container">
+				<div class="section-header">
+					<h2>Nhiệm vụ đào tạo của trung tâm</h2>
+					<p>Tạo ra một môi trường học tập và cung cấp cho sinh viên những công cụ và tài nguyên cần thiết để phát triển kỹ năng tiếng Anh</p>
+				</div><!--/.section-header-->
+				<div class="works-content">
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-lightbulb-idea"></i>
+								</div>
+								<h2><a href="#">Cung cấp lộ trình rõ ràng</a></h2>
+								<p>
+									Các khoá học nên được tổ chức một cách cấu trúc, từ cơ bản đến nâng cao, để hỗ trợ việc học tập theo trình độ và nhu cầu cụ thể của sinh viên.
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-networking"></i>
+								</div>
+								<h2><a href="#">Hỗ trợ học tập tích cực</a></h2>
+								<p>
+									Trang web nên cung cấp các công cụ và tài nguyên để hỗ trợ bao gồm: diễn đàn trao đổi kiến thức, hỗ trợ từ giáo viên và cộng đồng, cũng như các tính năng ghi chú và nhắc nhở.
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-location-on-road"></i>
+								</div>
+								<h2><a href="#">Theo dõi <span> Tiến độ và Đánh giá</span></a></h2>
+								<p>
+									theo dõi tiến độ học tập của sinh viên thông qua các bài kiểm tra, bài tập và cung cấp phản hồi đối với kết quả học tập của sinh viên.
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+		
+		</section><!--/.works-->
+		<!--works end -->
+
+		<!--explore start -->
+		<section id="explore" class="explore">
+			<div class="container">
+				<div class="section-header">
+					<h2>Các Khoá Học Tiêu Biểu</h2>
+					<p>Khám phá những khoá học được hướng dẫn bởi những giảng viên hàng đầu</p>
+				</div><!--/.section-header-->
+
+				<div class="explore-content">
+					<div class="row">
+						<% featuredCourses.forEach(item => { %>		
+						<div class=" col-md-4 col-sm-6">
+							<div class="single-explore-item">
+								<div class="single-explore-img">
+									<a href="/coursedetail/<%= item.course_id %>">
+									<img src="../images/welcome-hero/English.png" alt="explore image">
+									</a>
+									<div class="single-explore-img-info">
+										<button onclick="window.location.href=`/coursedetail/${item.course_id}` ">best rated</button>
+										<div class="single-explore-image-icon-box">
+											<ul>
+												<li>
+													<div class="single-explore-image-icon">
+														<i class="fa fa-arrows-alt"></i>
+													</div>
+												</li>
+												<li>
+													<div class="single-explore-image-icon">
+														<i class="fa fa-bookmark-o"></i>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="single-explore-txt bg-theme-1">
+									<h2><a href="/coursedetail/<%= item.course_id %>"><%= item.title %></a></h2>
+									<p class="explore-rating-price">
+										<span class="explore-rating">5.0</span>
+										<a href="#"> 10 ratings</a> 
+										<span class="explore-price-box">
+											Giá: 
+											<span class="explore-price"><%= item.cost %> đ</span>
+										</span>
+									</p>
+									<div class="explore-person">
+										<div class="row">
+											<div class="col-sm-2">
+												<div class="explore-person-img">
+													<a href="#">
+														<img src="../images/explore/person.png" alt="explore person">
+													</a>
+												</div>
+											</div>
+											<div class="col-sm-10">
+												<p>
+													<%= item.description %>
+											</div>
+										</div>
+									</div>
+									<div class="explore-open-close-part">
+										<div class="row">
+											<div class="col-sm-5">
+												<button class="btn btn-primary" onclick="window.location.href='/payment/<%= item.course_id %>'">Mua ngay</button>
+											</div>
+											<div class="col-sm-7">
+												<div class="explore-map-icon">
+													<a href="#"><i data-feather="heart"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% }); %>
+					</div>
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.explore-->
+		<!--explore end -->
+
+		<!--reviews start -->
+		<section id="reviews" class="reviews">
+			<div class="section-header">
+				<h2>Student reviews</h2>
+				<p>Cùng xem các phản hồi của sinh viên!</p>
+			</div><!--/.section-header-->
+			<div class="reviews-content">
+				<div class="testimonial-carousel">
+					<% feedbacks.forEach(item => { %>
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="../images/clients/c1.png" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2><%= item.name %></h2>
+									<h4><%= item.title %></h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									<%= item.feedback_text %>
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+					<% }); %>
+				</div>
+			</div>
+
+		</section><!--/.reviews-->
+		<!--reviews end -->
+
+		<!-- statistics strat -->
+		<section id="statistics"  class="statistics">
+			<div class="container">
+				<div class="statistics-counter"> 
+					<div class="col-md-3 col-sm-6">
+						<div class="single-ststistics-box">
+							<div class="statistics-content">
+								<div class="counter">70 </div> <span>+</span>
+							</div><!--/.statistics-content-->
+							<h3>Khoá học</h3>
+						</div><!--/.single-ststistics-box-->
+					</div><!--/.col-->
+					<div class="col-md-3 col-sm-6">
+						<div class="single-ststistics-box">
+							<div class="statistics-content">
+								<div class="counter">40</div> <span>+</span>
+							</div><!--/.statistics-content-->
+							<h3>Giảng Viên</h3>
+						</div><!--/.single-ststistics-box-->
+					</div><!--/.col-->
+					<div class="col-md-3 col-sm-6">
+						<div class="single-ststistics-box">
+							<div class="statistics-content">
+								<div class="counter">600</div> <span>+</span>
+							</div><!--/.statistics-content-->
+							<h3>Sinh Viên</h3>
+						</div><!--/.single-ststistics-box-->
+					</div><!--/.col-->
+					<div class="col-md-3 col-sm-6">
+						<div class="single-ststistics-box">
+							<div class="statistics-content">
+								<div class="counter">50</div> <span>+</span>
+							</div><!--/.statistics-content-->
+							<h3>Phản hồi tích cực</h3>
+						</div><!--/.single-ststistics-box-->
+					</div><!--/.col-->
+				</div><!--/.statistics-counter-->	
+			</div><!--/.container-->
+
+		</section><!--/.counter-->	
+		<!-- statistics end -->
+
+		<!--blog start -->
+		<section id="blog" class="blog" >
+			<div class="container">
+				<div class="section-header">
+					<h2>Đội ngũ sáng lập</h2>
+					<p>Đội ngũ giảng viên giảng viên giàu kiến thức, kinh nghiệm và trải nghiệm</p>
+				</div><!--/.section-header-->
+				<div class="blog-content">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="../images/blog/b3.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="#">TS: Nguyễn Thị Hương</a></h2>
+									<h4>kinh nghiệm: <a href="#">15 năm</a></h4>
+									<p>
+										Thạc sĩ Hương là một chuyên gia trong lĩnh vực giảng dạy tiếng Anh kinh doanh. Với sự tận tâm và đam mê, cô đã giúp hàng trăm học viên phát triển kỹ năng giao tiếp và viết bài chuyên nghiệp									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="../images/blog/b3.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="#">GS: Lê Văn Nam</a></h2>
+									<h4>kinh nghiệm: <a href="#">25 năm</a></h4>
+									<p>
+										Giáo sư Nam là một trong những người dẫn dắt hàng loạt khóa học tiếng Anh với sự phong phú về văn hóa và ngôn ngữ. Anh ấy tận dụng kinh nghiệm quý báu của mình để tạo ra môi trường học tập đa dạng và thú vị.									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="../images/blog/b3.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="#">Cô: Nguyễn Thị Lan Anh</a></h2>
+									<h4>kinh nghiệm: <a href="#">12 năm</a></h4>
+									<p>
+										Cô Lan Anh đã làm việc trong lĩnh vực giảng dạy tiếng Anh cho người nói tiếng Tây Ban Nha và tiếng Trung Quốc. Với phong cách dạy học cá nhân hóa, cô ấy giúp sinh viên phát triển kỹ năng theo cách tự tin và hiệu quả.									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="../images/blog/b3.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="#">TS: Nguyễn Văn Đức</a></h2>
+									<h4>kinh nghiệm: <a href="#">18 năm</a></h4>
+									<p>
+										Thạc sĩ Đức là một giáo viên tiếng Anh sáng tạo, chuyên sâu về việc sử dụng công nghệ trong giảng dạy. Với sự sáng tạo và kinh nghiệm dày dặn, anh đã tạo ra những khóa học kích thích và mang lại kết quả đáng kinh ngạc cho học viên.									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+			
+		</section><!--/.blog-->
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Bạn còn chần chờ gì mà không đăng kí đồng hành cùng chúng tôi!
+					</h2>
+					<p>
+						Nếu bạn chưa có email có thế tạo ngay ở bên dưới này
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn"  onclick="window.open('https://accounts.google.com/lifecycle/steps/signup/name?ddm=0&dsh=S-972989627:1715014488839756&ec=asw-gmail-globalnav-create2&flowEntry=SignUp&flowName=GlifWebSignIn&theme=mn&TL=ALv_Gf_3uXKn-TmvolWafyuRH8SL45dBx_p9QSMpZAnTwe-va4JCTjPWg6Pb4byF', '_blank')">
+									creat account
+								</button>
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer gradient-background">
+			<div class="container">
+				
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="footer-social">
+								<span><i class="fa fa-phone" style="color: aliceblue;"> +1  (222) 777 8888</i></span>
+								<a href="#"><i class="fa fa-facebook"></i></a>	
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="../js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="../js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="../js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="../js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="../js/jquery.counterup.min.js"></script>
+		<script src="../js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="../js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="../js/custom.js"></script>
+        
+    </body>
+	
+</html>

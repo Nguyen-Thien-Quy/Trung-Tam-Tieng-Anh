@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course Detail</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+
+        .navbar-collapse-right {
+            margin-left: 750px;
+        }
+
+        .container-wrap {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 48px;
+        }
+
+        .text-container {
+            width: 100%;
+            max-width: 1340px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 20px 2.4px 30px 2.4px;
+            border-bottom: 1px solid #dcdacb;
+        }
+
+        .heading-xl {
+            font-family: sf pro display, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif,
+                apple color emoji, segoe ui emoji, segoe ui symbol;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -.02px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .heading-lg {
+            font-family: sf pro display, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.2px;
+            font-size: 20px;
+        }
+
+        .heading-md {
+            font-family: sf pro display, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.2px;
+            font-size: 16px;
+        }
+
+        .black-background {
+            padding-top: 48px;
+            width: 100%;
+            height: 430px;
+            background-color: black;
+            padding-top: 32px;
+            padding-bottom: 32px;
+            color: white;
+        }
+
+        .inlineblock {
+            display: inline-block;
+            width: 700px;
+            height: 100%;
+            padding: 5px;
+        }
+
+        .img {
+            float: right;
+            width: 450px;
+            height: 100%;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .what-you-will-learn {
+            background-color: #fbfbf8;
+            border: 1px solid #dcdacb;
+            border-radius: 4px;
+            padding: 24px 0;
+        }
+
+        .what-you-will-learn-content {
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .fas {
+            font-size: 11px;
+        }
+
+        .teacher-avt {
+            width: 110px;
+            height: 110px;
+        }
+
+        .heading-xxl {
+            font-weight: 700;
+            font-size: 60px;
+        }
+
+        .card {
+            width: 140px;
+            align-items: center;
+            border: 0;
+        }
+
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        .middle {
+            margin-top: 10px;
+            float: left;
+            width: 70%;
+        }
+
+        .bar {
+            height: 13px;
+            background-color: gray;
+        }
+
+        .bar-5 {
+            width: 60%;
+        }
+
+        .bar-4 {
+            width: 30%;
+        }
+
+        .bar-3 {
+            width: 10%;
+        }
+
+        .bar-2 {
+            width: 4%;
+        }
+
+        .bar-1 {
+            width: 15%;
+        }
+
+        .col {
+            padding-top: 17px;
+        }
+
+        .reviews {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .container {
+            max-width: 1220px;
+        }
+
+        .comment {
+            padding-top: 40px;
+        }
+
+        .footer-container {
+            padding-top: 30px;
+            padding-bottom: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .pagination {
+            padding-top: 30px;
+        }
+
+        .btn-outline-danger {
+            margin-left: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="black-background">
+        <div class="container-wrap">
+            <div name="header">
+                
+
+                <!-- <img src=""  alt="image" class="img"> -->
+                <div class="text-container inlineblock" style="border-bottom: 0;">
+                    <div name='course-detail'>
+                        <h2><strong><%= course.title %></strong></h2>
+                    </div>
+                    <p><%= course.description %></p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <!-- <span class="far fa-star text-warning"></span> -->
+                    <span class="text-warning" style="padding-left: 5px;"><strong>5</strong></span>
+                    <p>Giá tiền: <span style="color: rgb(144, 205, 247);"><strong><%= course.cost %></strong></span></p>
+                    <p>Giảng viên: <a href="#" style="color: rgb(144, 205, 247);"><strong><%= course.name %></strong></a></p>
+                    <button type="button" class="btn btn-outline-warning" onclick="window.location.href='/payment/<%= course.course_id %>'">
+                        <i class='far fa-heart'></i>
+                        <strong style="font-size: 18px;">Mua khoá học</strong>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" onclick="window.location.href='/payment'">
+                        <i class='far fa-heart'></i>
+                        <strong style="font-size: 18px;">Yêu thích</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-wrap">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item home-tab">
+                <a class="nav-link active" href="#course-intro" style="font-size: 20px;">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#course-content" style="font-size: 20px;">Nội dung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#course-teacher" style="font-size: 20px;">Thông tin giảng
+                    viên</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#student-feedback" style="font-size: 20px;">Reviews</a>
+            </li>
+            <li id="course-intro" class="nav-item">
+                <a class="nav-link" href="#faq" style="font-size: 20px;">FAQ</a>
+            </li>
+        </ul>
+
+        <div class="text-container">
+            <h2 class="heading-xl">Chào mừng bạn đến với Khóa Luyện Thi TOEIC với hai kỹ năng quan trọng: Nghe và Đọc!</h2>
+            <p>Bạn muốn cải thiện điểm số TOEIC của mình? Khóa học này được thiết kế đặc biệt để giúp bạn nắm vững cả hai kỹ năng quan trọng này, từ những kiến thức cơ bản đến những kỹ thuật nâng cao.
+                <br>
+                Với phương pháp học tập linh hoạt và hiệu quả, chúng tôi sẽ hướng dẫn bạn qua các bài giảng thú vị, bài tập thực hành và kiểm tra định kỳ, giúp bạn tự tin và thành thạo trong việc đối phó với các dạng câu hỏi thực tế trên kỳ thi TOEIC.</p>
+            <p>Ai có thể học khoá học này:</p>
+            <ul>
+                <li>Bất kì ai yêu thích tiếng anh và đang có nhu cầu học tập nâng cao bản thân.</li>
+                <li>Sinh viên đại học và cao đẳng: Những người đang chuẩn bị cho kỳ thi TOEIC để đáp ứng yêu cầu tốt nghiệp hoặc để tăng cơ hội việc làm sau này.</li>
+                <li>Nhân viên văn phòng và chuyên viên: Những người đang làm việc hoặc chuẩn bị xin việc trong môi trường làm việc quốc tế, nơi mà tiếng Anh là ngôn ngữ chính thức.</li>
+                <li>Người đang chuẩn bị cho cơ hội học tập hoặc làm việc ở nước ngoài</li>
+            </ul>
+            <div id="course-content" class="what-you-will-learn">
+                <h3 style="margin: 0 2.4rem 1.6rem;"><strong>Bạn sẽ được học</strong></h3>
+                <ul class="what-you-will-learn-content">
+                    <i class="fas fa-check"></i>
+                    <span> Chiến lược làm bài thi TOEIC: Hướng dẫn về cách tiếp cận và giải quyết các dạng câu hỏi thường gặp trong phần nghe và đọc của kỳ thi TOEIC</span><br>
+
+                    <i class="fas fa-check"></i>
+                    <span> Luyện nghe hiểu: Phân tích và thực hành các kỹ năng cần thiết để hiểu và ghi nhớ thông tin từ các bài nghe</span><br>
+
+                    <i class="fas fa-check"></i>
+                    <span> Luyện đọc hiểu: Cung cấp các chiến lược và kỹ năng để đọc hiệu quả các loại văn bản có thể gặp trong kỳ thi TOEIC</span><br>
+
+                    <i class="fas fa-check"></i>
+                    <span> Tăng cường từ vựng và ngữ pháp: Hỗ trợ việc mở rộng vốn từ vựng và sử dụng ngữ pháp chính xác trong các bài nghe và đọc</span><br>
+
+                    <i class="fas fa-check"></i>
+                    <span> Thực hành thông qua bài tập và bài kiểm tra mô phỏng: Cung cấp các bài tập và bài kiểm tra để thử nghiệm kiến thức và kỹ năng đã học</span>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <h2 class="heading-xl">Lộ trình khoá học: </h2>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul>
+                        <i class="fa fa-play-circle"></i>
+                        <a href="/lesson" style="color: black;">Chương 1: Hiểu Biết Cơ Bản và Chiến lược Làm Bài</a>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-left">
+                    <button type="button" class="btn btn-secondary">Preview</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul>
+                        <i class="fa fa-play-circle"></i>
+                        <a href="/lesson" style="color: black;">Chương 2: Kỹ Năng Nghe Hiểu</a>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-left">
+                    <button type="button" class="btn btn-secondary">Preview</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul>
+                        <i class="fa fa-play-circle"></i>
+                        <a href="./lesson" style="color: black;">Chương 3: Kỹ Năng Đọc Hiểu</a>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-left">
+                    <button type="button" class="btn btn-secondary">Preview</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul>
+                        <i class="fa fa-play-circle"></i>
+                        <a href="./lesson" style="color: black;">Chương 4: Tổng Hợp và Luyện Đề</a>
+                    </ul>
+                </div>
+                <div id="course-teacher" class="col-sm-4 text-left">
+                    <button type="button" class="btn btn-secondary">Preview</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-container">
+            <h2 class="heading-xl">Instructor</h2>
+            <div class="heading-lg">
+                <a href="#" style="text-decoration:none;"><%= course.name %></a>
+            </div>
+            <p style="color: gray;">Thạc sĩ tại Mỹ</p>
+            <div class="row">
+                <div>
+                    <img src="../images/clients/c2.png" alt="" class="rounded-circle teacher-avt">
+                </div>
+                <div style="margin-left: 20px;">
+                    <i class="fas fa-star text-warning"></i>
+                    <span style="margin-left: 8px;">4.5 đánh giá</span><br>
+
+                    <i class="fas fa-user-graduate text-warning"></i>
+                    <span style="margin-left: 8px;">126 học sinh</span><br>
+
+                    <i class='fas fa-play-circle text-warning'></i>
+                    <span style="margin-left: 8px;">1 Course</span><br>
+                </div>
+                <p id="student-feedback" style="padding-top: 20px;">Chào mừng các bạn đến với khoá học <% course.title %>
+                </br>
+                <%= course.description_teacher %>
+                </p>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <h2 class="heading-xl">Phản Hồi Học Viên</h2>
+            <div class="row">
+                <div class="card">
+                    <div class="heading-xxl text-warning">4.5</div>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-alt checked"></span>
+                        <!-- <span class="far fa-star text-warning"></span> -->
+                    </div>
+                    <div class="text-warning"><strong>Đánh Giá</strong></div>
+                </div>
+
+                <div class="col">
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar bar-5"></div>
+                        </div>
+                    </div>
+
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar bar-4"></div>
+                        </div>
+                    </div>
+
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar bar-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar bar-2"></div>
+                        </div>
+                    </div>
+
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar bar-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reviews">
+                <h2 class="heading-xl" style="padding-top: 40px;">Reviews</h2>
+                <% feedbacks.forEach(item => {%>
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="../images/clients/anonimos.png" alt="" class="rounded-circle reviews">
+                    </div>
+                    <div class="col-sm-11">
+                        <p class="heading-md"><%= item.name %></p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="far fa-star text-warning"></span>
+                        <span style="color: gray;"><%= item.created_at %> </span>
+                        <p style="padding-top: 10px;"><%= item.feedback_text %></p>
+                        <a href="#"><i class="fa fa-thumbs-up" style="color: gray;"></i></a>
+                        <span style="font-size: 12px;">Was this review helpful?</span>
+                    </div>
+                </div>
+                <% }) %>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+
+                <div id="evaluation">
+                    <form action="/feedback/<%= course.course_id %>" method="post">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Đánh giá của bạn</label>
+                            <textarea name = "feedback" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    <button type="submit" class="btn btn-info" style="float: right;">Gửi</button><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="faq" class="text-container" style="border: 0px">
+            <h2 class="heading-xl">FAQ</h2>
+        </div>
+
+        <script src="../js/course.js"></script>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python coursers</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+
+        .navbar-collapse-right {
+            margin-left: 750px;
+        }
+
+        .container-wrap {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 48px;
+        }
+
+        .course-list {
+            padding-top: 40px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #dcdacb;
+        }
+
+        .udlite-container {
+            width: 100%;
+            max-width: 1340px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 30px 2.4px 30px 2.4px;
+        }
+
+        .heading-xl {
+            font-family: sf pro display, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif,
+                apple color emoji, segoe ui emoji, segoe ui symbol;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -.02px;
+            font-size: 24px;
+        }
+
+        .img {
+            float: left;
+            width: 260px;
+            height: 145px;
+            margin-right: 20px;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .card-hot {
+            width: 40px;
+            height: 25px;
+            background-color: rgba(243, 70, 70, 0.788);
+        }
+
+        .card-new {
+            width: 40px;
+            height: 25px;
+            background-color: rgb(86, 202, 86);
+        }
+
+        .card-best {
+            width: 40px;
+            height: 25px;
+            background-color: rgb(226, 226, 73);
+        }
+
+        .price {
+            float: right;
+            font-size: 20px;
+        }
+
+        .fa-star {
+            font-size: 13px;
+        }
+
+        .footer-container {
+            padding-top: 30px;
+            padding-bottom: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-wrap">
+        <div name='python-coursers' class="udlite-container">
+            <h1 class="heading-xl"><%= locals.title %></h1>
+            <form>
+                <div class="form-row align-items-center">
+                    <% if(locals.role === 'admin' && locals.action === 'create'){ %>
+                        <div class="col-auto my-1">
+                            <button type="button" class="btn btn-success" onclick="window.location.href='/register'">Thêm học viên</button>
+                        </div>
+                    <% }else{ %>
+                    <div class="col-auto my-1">
+                        <button type="button" class="btn btn-success" onclick="window.location.href='/addStudent/<%= locals.course_id %>'">Thêm học viên</button>
+                    </div>
+                    <% } %>
+                </div>
+            </form>
+
+            <% if(locals.data){ %>
+            <% data.forEach(item => { %>
+            <div class="course-list">
+                    <img src="../images/welcome-hero/English.png" alt="picture english" class="img">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h4><%= item.title %></h4>
+                        <p style="font-size: 16px;"><strong>Tên học viên: </strong><%= item.name %></p>
+                        <div>
+                            Giới tính: <%= item.gender %>
+                            <br>
+                            Email: <%= item.email %>
+                            <br>
+                            Số điện thoại: <%= item.phone %>
+                            <br>
+                            Địa chỉ: <%= item.address %>
+                        </div>
+                            <% if(locals.role === 'teacher'){ %>
+                                <br>
+                                <button class="btn btn-primary rounded-pill px-3" type="button" onclick="window.location.href='/editStudent?student_id=<%= item.student_id %>&course_id=<%= locals.course_id %>'">Chỉnh sửa</button>
+                                <button class="btn btn-danger rounded-pill px-3" type="button" onclick="window.location.href='/deleteStudent?student_id=<%= item.student_id %>&course_id=<%= locals.course_id %>' ">Xoá học viên</button>
+                            <% }else{ %>
+                                <br>
+                                <button class="btn btn-primary rounded-pill px-3" type="button" onclick="window.location.href='/editStudent?student_id=<%= item.student_id %>'">Chỉnh sửa</button>
+                                <button class="btn btn-danger rounded-pill px-3" type="button" onclick="window.location.href='/deleteStudent?student_id=<%= item.student_id %>' ">Xoá học viên</button>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+            <% }else{ %>
+                <h4 style="color: red;"> Không có học sinh nào cả</h4>
+            <% } %>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
